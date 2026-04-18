@@ -26,15 +26,15 @@ def criar_e_move_pasta(dados: Dados,):
     pastas_criadas = 0
     arquivos_movidos = 0
     categorias_afetadas = []
-    for chave in categorias.keys():
+    for chave in arquivos_encontrados.keys():
         if not os.path.exists( os.path.join( dados.caminho, chave ) ):
             os.mkdir( os.path.join( dados.caminho, chave ) )
             pastas_criadas += 1
     for chave, valor in arquivos_encontrados.items():
         for arc in valor:
             if not os.path.exists( os.path.join( dados.caminho, chave, arc ) ):
-                shutil.move( os.path.join( dados.caminho, arc ), os.path.join( dados.caminho, chave, arc ) )
-                arquivos_movidos += 1
+               shutil.move( os.path.join( dados.caminho, arc ), os.path.join( dados.caminho, chave, arc ) )
+               arquivos_movidos += 1
     for chave,valor in arquivos_encontrados.items():
         if valor:
             categorias_afetadas.append(chave)
