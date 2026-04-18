@@ -1,5 +1,5 @@
 import os
-from app.dicionario import categorias
+from app.core.dicionario import categorias
 
 
 
