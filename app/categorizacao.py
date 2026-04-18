@@ -7,7 +7,7 @@ from app.dicionario import categorias
 
 def categorizador(caminho):
     arquivos_encontrados = {'audios': [], 'videos': [], 'imagens': [], 'executaveis': [], 'documentos': [],
-                            'arquivos_compactados': [], 'scripts': []}
+                            'arquivos_compactados': [], 'scripts': [],'outros': []}
     arquivos = os.listdir( caminho )
     total_arquivos=0
     for arc in arquivos:
@@ -35,4 +35,7 @@ def categorizador(caminho):
 
             elif extensao in categorias['scripts']:
                 arquivos_encontrados['scripts'].append( arc )
+
+            else:
+                arquivos_encontrados['outros'].append( arc )
     return  arquivos_encontrados, total_arquivos
