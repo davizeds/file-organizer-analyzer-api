@@ -37,7 +37,7 @@ API desenvolvida com **FastAPI** para organizar, analisar e filtrar arquivos de 
 git clone https://github.com/davizeds/file-organizer-analyzer-api.git
 cd file-organizer-analyzer-api
 
-pip install -r requirements.txt
+pip install fastapi uvicorn[standard] pydantic
 
 uvicorn app.main:app --reload
 ```
